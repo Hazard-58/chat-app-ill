@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --mobile-w:375px;
+    --main-color:hsl(264, 100%, 61%);
+    --second-color:hsl(293, 100%, 63%);
+}
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+main {
+    width: var(--mobile-w);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    background-color: #9c27b038;
+}
+
+main .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ededed;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 0 40px 0 rgb(201, 201, 201);
+}
+
+main .card::before {
+    content: "";
+    position: absolute;
+    background-color: #ededed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 45px;
+    border-radius: 20px;
+}
+
+.card header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-top: 30px;
+    background-image: linear-gradient(to right ,  hsl(264, 100%, 61%)
+    , hsl(293, 100%, 63%));
+    color: white;
+    border-radius: 40px 40px 10px 10px;
+    gap: 10px;
+}
+
+.card header .image {
+    width: 40px;
+}
+
+.card header .image img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.card header h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.card header p {
+    font-size: 16px;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.card header ul li {
+    list-style: none;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+/* section 0 */
+
+main .conv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+
+main .conv div:not(div.price) p:not(.ttt) {
+    width: 70%;
+    padding: 5px 10px;
+    background-color: rgb(219, 218, 218);
+    border-radius: 10px;
+    color: var(--second-color);
+    margin-bottom: 20px;
+}
+main .conv div:not(div.price):nth-child(3) ,
+main .conv div:not(div.price):nth-child(4) ,
+main .conv div:not(div.price):nth-child(5) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+main .conv div:not(div.price):nth-child(4) p ,
+main .conv div:not(div.price):nth-child(5) p  {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow: 0 0 10px 0 rgb(172, 171, 171);
+}
+
+
+main .conv .images {
+    display: flex;
+    gap: 20px;
+}
+
+main .conv .images img {
+    width: 60px;
+    border-radius: 15px;
+}
+
+main .conv .price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right , hsl(293, 100%, 63%), hsl(264, 100%, 61%)
+    , hsl(293, 100%, 63%));
+    color: white;
+    border-radius: 20px 20px 20px 5px;
+}
+
+main .conv .price div {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.323);
+}
+
+main .conv .price span {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+/* footer  */
+
+footer div {
+    background-color: var(--main-color);
+    color: rgb(147, 147, 147);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 20px;
+    border-radius:40px;
+    background-color: rgb(255, 255, 255);
+    gap: 60px;
+}
+
+footer p {
+    background-color: none;
+    opacity: .7;
+}
+
+/*  */
+
+main .textf {
+    margin: 50px auto;
+}
+
+main .textf h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+main .textf p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+@media (min-width:765px) {
+    main {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+
+    main .card .container {
+        margin: auto;
+    }
+    main .card {
+        width: var(--mobile-w);
+    }
+    main .textf {
+        width: 30%;
+        margin: 0;
+    }
+
+    main .textf h1 , 
+    main .textf p {
+        text-align: left;
+    }
+}
+
